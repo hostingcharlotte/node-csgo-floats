@@ -2,7 +2,7 @@
 ### This is not a bot. This is an abstraction layer written upon node-steam-user for obtaining an item's attributes such as its paintwear, paintseed and paintindex. It allows you to request more than one item per second (given multiple bots are added).
 [![npm version](https://img.shields.io/npm/v/csgo-floats.svg)](https://npmjs.com/package/csgo-floats)
 [![npm downloads](https://img.shields.io/npm/dm/csgo-floats.svg)](https://npmjs.com/package/csgo-floats)
-[![dependencies](https://img.shields.io/david/Kondax/node-csgo-floats.svg)](https://david-dm.org/DoctorMcKay/node-csgo-floats)
+[![dependencies](https://img.shields.io/david/Kondax/node-csgo-floats.svg)](https://david-dm.org/Kondax/node-csgo-floats)
 [![license](https://img.shields.io/npm/l/csgo-floats.svg)](https://github.com/Kondax/node-csgo-floats/blob/master/LICENSE)
 
 CSGO Floats (despite the name) is an abstraction layer written upon [node-steam-user SteamUser](https://github.com/DoctorMcKay/node-steam-user). It allows you to pass in multiple [node-steam-user SteamUser](https://github.com/DoctorMcKay/node-steam-user) instances. It rotates between these instances to fetch item data about any inspect url you pass to it.
