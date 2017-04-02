@@ -72,6 +72,9 @@ class BotMaster extends EventEmitter {
     }
 
     _handleInspectResponse(accountID, item) {
+        if(!this._itemQueue.hasOwnProperty(item.itemid))
+            return;
+
         const queueItem = this._itemQueue[item.itemid];
         delete this._itemQueue[item.itemid];
 
