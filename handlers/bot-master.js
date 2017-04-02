@@ -86,7 +86,7 @@ class BotMaster extends EventEmitter {
         queueItem.resolve(item);
     }
 
-    async _runQueue(a) {
+    _runQueue() {
         const filteredBots  = Object.keys(this._availableBots).filter(accountID => this._availableBots[accountID].available);
         const filteredItems = Object.keys(this._itemQueue).filter(assetID => !this._itemQueue[assetID].requesting);
 
