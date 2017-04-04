@@ -154,6 +154,8 @@ Emitted when Steam emits an error.
 
 Emitted when Steam connects to the GC. Use this method to know when you can start requesting to resolve items.
 
+**This event can be emit multiple times. If you queue items once it is emit duplicates will be added causing failure in these duplicates. Please only listen to the first event unless an error is emit.**
+
 ### disconnectedFromGC
 - `accountID` - The `accountID` of the bot that the event is emitted from.
 - `reason` - The `reason` as to why the bot was disconnected from the GC. Emitted by Steam.
