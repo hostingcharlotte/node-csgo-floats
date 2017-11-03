@@ -99,7 +99,9 @@ class BotMaster extends EventEmitter {
 
         this._itemQueue[assetID].requesting      = true;
         this._availableBots[accountID].available = false;
-        this._availableBots[accountID].inspectItem(item.steamID64, assetID, item.ambiguousID);
+        
+        // do a check here to see if either steamID64 is set (user inspect link) or whether it is an item from the market.
+        this._availableBots[accountID].inspectItem((item.steamID64 || item.market), assetID, item.ambiguousID);
 
         Functions.sleep(2000).then(_ => {
             if(!this._itemQueue.hasOwnProperty(assetID))
@@ -126,6 +128,7 @@ class BotMaster extends EventEmitter {
             this._itemQueue[params.a] = {
                 steamID64:   params.s,
                 ambiguousID: params.d,
+                market: params.m, // Always add the M Parameter regardless of whether it is null. We can then alternate depending on whether it is a user inspect link or a market inspect link.
                 requesting:  false,
                 resolve:     resolve,
                 reject:      reject
